@@ -39,7 +39,7 @@ pub struct ChatWithVersions {
     pub versions: Option<Vec<i64>>,
 }
 
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct IncomingUserPrompt {
     pub text: String,
