@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Section } from "$lib/models/section"
-  import { BotMessageSquareIcon, PackageIcon, SettingsIcon } from "lucide-svelte"
+  import { BotMessageSquareIcon, PackageIcon, SettingsIcon, WorkflowIcon } from "lucide-svelte"
   import TabLink from "./app-bar/tab-link.svelte"
   import { page } from "$app/state"
 
@@ -10,6 +10,12 @@
       icon: BotMessageSquareIcon,
       href: "/",
       activePattern: /^\/?$/,
+    },
+    {
+      name: "Continuous Generation",
+      icon: WorkflowIcon,
+      href: "/congen",
+      activePattern: /^\/congen(\/*.)?/,
     },
     {
       name: "Models",
