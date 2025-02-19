@@ -3,7 +3,7 @@ import MarkdownIt from "markdown-it"
 import mdKatex from "@vscode/markdown-it-katex"
 import "katex/dist/katex.min.css"
 
-const md = MarkdownIt({
+export const md = MarkdownIt({
   html: false,
   linkify: true,
   highlight(src, lang) {
