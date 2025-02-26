@@ -1,5 +1,8 @@
+import "@fontsource-variable/inter"
 import { component$, Slot } from "@builder.io/qwik"
 import type { RequestHandler } from "@builder.io/qwik-city"
+import { Toaster } from "qwik-sonner"
+import { AppBar } from "~/components/app-bar/app-bar"
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
@@ -13,5 +16,21 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
 }
 
 export default component$(() => {
-  return <Slot />
+  return (
+    <>
+      <Toaster
+        closeButton
+        richColors
+        class="font-sans"
+      />
+
+      <div class="flex flex-row w-dvw h-dvh">
+        <AppBar />
+
+        <div class="flex-grow">
+          <Slot />
+        </div>
+      </div>
+    </>
+  )
 })
