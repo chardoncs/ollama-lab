@@ -37,7 +37,6 @@
     "@tauri-apps/plugin-os": "^2.2.0",
     "@tauri-apps/plugin-process": "^2.2.0",
     "@types/autosize": "^4.0.3",
-    "@types/bun": "^1.2.4",
     "@types/eslint": "^8.56.12",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
