@@ -30,6 +30,7 @@
         "postcss-preset-env": "^9.6.0",
         "prettier": "3.3.3",
         "prettier-plugin-tailwindcss": "^0.6.11",
+        "qwik-sonner": "^1.0.3",
         "tailwind-merge": "^2.6.0",
         "tailwindcss": "^4.0.9",
         "undici": "^7.3.0",
@@ -994,6 +995,8 @@
     "punycode": ["punycode@2.3.1", "", {}, "sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg=="],
 
     "queue-microtask": ["queue-microtask@1.2.3", "", {}, "sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A=="],
+
+    "qwik-sonner": ["qwik-sonner@1.0.3", "", {}, "sha512-n3StJm/5ZLgnzPeVJWQvJz2+gKxuov37VcbeeaXwWJA+bUgX4t0miAkOZDjgTGmyzTLST3PsN2fnSWeelVGTuA=="],
 
     "react": ["react@19.0.0", "", {}, "sha512-V8AVnmPIICiWpGfm6GLzCR/W5FXLchHop40W4nXBmdlEceh16rCN8O8LNWm5bh5XUX91fh7KpA+W0TgMKmgTpQ=="],
 

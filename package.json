@@ -50,6 +50,7 @@
     "postcss-preset-env": "^9.6.0",
     "prettier": "3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
+    "qwik-sonner": "^1.0.3",
     "tailwind-merge": "^2.6.0",
     "tailwindcss": "^4.0.9",
     "undici": "^7.3.0",
