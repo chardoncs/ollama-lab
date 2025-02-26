@@ -33,10 +33,7 @@ const footerTabs: Section[] = [
   },
 ]
 
-export interface AppBarProps {
-}
-
-export const AppBar = component$<AppBarProps>((_props) => {
+export const AppBar = component$(() => {
   return (
     <nav class="flex flex-col border-r border-border px-1 py-1">
       <div class="grow flex flex-col">
