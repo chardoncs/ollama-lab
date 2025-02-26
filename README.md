@@ -38,3 +38,9 @@ paru -S ollama-lab
 >
 > It is recommended to run `yay/paru -Scc` to clean up the space after using `ollama-lab`,
 > because the build files may take up to 8~10 GiB on your disks.
+
+## Static Site Generator (Node.js)
+
+```shell
+bun build.server
+```

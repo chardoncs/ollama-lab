@@ -1,13 +1,45 @@
-.DS_Store
+# Build
+/dist
+/lib
+/lib-types
+/server
+
+# Development
 node_modules
-/build
-/.svelte-kit
-/package
 .env
-.env.*
-!.env.example
-vite.config.js.timestamp-*
-vite.config.ts.timestamp-*
+*.local
+
+# Cache
+.cache
+.mf
+.rollup.cache
+tsconfig.tsbuildinfo
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Editor
+.vscode/*
+!.vscode/launch.json
+!.vscode/*.code-snippets
+
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Yarn
+.yarn/*
+!.yarn/releases
 
 /target/
 /gen/schemas
