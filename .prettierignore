@@ -37,3 +37,6 @@ yarn.lock
 bun.lock
 server
 .github
+
+Cargo.*
+src-tauri
