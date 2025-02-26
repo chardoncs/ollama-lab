@@ -19,9 +19,10 @@
   --color-destructive-foreground: hsl(0 0% 98%);
   --color-ring: hsl(240 10% 3.9%);
 
+  --font-sans-inter: "Inter Variable", var(--font-sans);
 }
 
-@base {
+@layer base {
   .dark {
     --color-background: hsl(240 10% 3.9%);
     --color-foreground: hsl(0 0% 98%);
@@ -45,6 +46,6 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans-inter;
   }
 }

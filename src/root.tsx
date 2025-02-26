@@ -8,6 +8,7 @@ import { RouterHead } from "./components/router-head/router-head"
 import { isDev } from "@builder.io/qwik"
 
 import "./global.css"
+import "@fontsource-variable/inter"
 
 export default component$(() => {
   return (

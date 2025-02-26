@@ -1,4 +1,3 @@
-import "@fontsource-variable/inter"
 import { component$, Slot } from "@builder.io/qwik"
 import type { RequestHandler } from "@builder.io/qwik-city"
 import { Toaster } from "qwik-sonner"
@@ -21,7 +20,7 @@ export default component$(() => {
       <Toaster
         closeButton
         richColors
-        class="font-sans"
+        class="font-sans-inter"
       />
 
       <div class="flex flex-row w-dvw h-dvh">
