@@ -16,7 +16,7 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
 
 export default component$(() => {
   return (
-    <>
+    <div class="contents">
       <Toaster
         closeButton
         richColors
@@ -30,6 +30,6 @@ export default component$(() => {
           <Slot />
         </div>
       </div>
-    </>
+    </div>
   )
 })
