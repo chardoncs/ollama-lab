@@ -4,7 +4,6 @@ import { TabLink } from './tab-link'
 import { useLocation } from '@builder.io/qwik-city'
 import { BotMessageSquareIcon, PackageIcon, SettingsIcon } from '~/integrations/react/lucide-icons'
 
-
 const tabs: Section[] = [
   {
     name: "Sessions",
