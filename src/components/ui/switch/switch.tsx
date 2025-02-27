@@ -23,7 +23,8 @@ export type SwitchProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 }
 
 export const Switch = component$<SwitchProps>(({
-  checked: forceChecked, class: className, defaultChecked, required, onCheckedChange$, ref, formControl = false,
+  checked: forceChecked, class: className, defaultChecked, required, onCheckedChange$, ref,
+  formControl = false, name,
   ...props
 }) => {
   const checked = useSignal(forceChecked || defaultChecked)
@@ -51,6 +52,7 @@ export const Switch = component$<SwitchProps>(({
           className,
         )}
         ref={ref}
+        name={formControl ? undefined : name}
         {...props}
         onClick$={() => {
           if (forceChecked !== undefined) {
@@ -64,7 +66,7 @@ export const Switch = component$<SwitchProps>(({
       </button>
 
       {formControl && (
-        <input type="hidden" bind:checked={checked} />
+        <input type="hidden" name={name} bind:checked={checked} />
       )}
     </>
   )
