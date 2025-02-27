@@ -8,13 +8,14 @@ export interface ModeProviderProps {
 
 export const ModeContext = createContextId<Signal<Mode>>("app.mode-context")
 
-export function useModeContextProvider() {
+export function useModeProvider() {
   const modeState = useSignal<Mode>("system")
 
   useContextProvider(ModeContext, modeState)
+  return modeState
 }
 
-export function useModeContext() {
+export function useMode() {
   const state = useContext(ModeContext)
   return state
 }

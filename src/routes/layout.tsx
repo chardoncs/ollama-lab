@@ -1,9 +1,10 @@
-import { component$, Slot } from "@builder.io/qwik"
+import { component$, Slot, useTask$ } from "@builder.io/qwik"
 import type { RequestHandler } from "@builder.io/qwik-city"
 import { Toaster } from "qwik-sonner"
 import { AppBar } from "~/components/app-bar/app-bar"
-import { ModeWatcher } from "~/components/mode-watcher/mode-watcher"
-import { useModeContextProvider } from "~/contexts/mode-context"
+import { useModeProvider } from "~/contexts/mode-context"
+import { useSettingsProvider } from "~/contexts/settings"
+import { useModeWatcher } from "~/utils/color-mode"
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
@@ -17,11 +18,20 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
 }
 
 export default component$(() => {
-  useModeContextProvider()
+  const mode = useModeProvider()
+  useModeWatcher(mode)
+  
+  const settings = useSettingsProvider()
+
+  useTask$(({ track }) => {
+    const newMode = track(() => settings.settings?.appearance["color-mode"])
+    if (newMode && newMode !== mode.value) {
+      mode.value = newMode
+    }
+  })
 
   return (
     <div class="contents">
-      <ModeWatcher />
       <Toaster
         closeButton
         richColors
