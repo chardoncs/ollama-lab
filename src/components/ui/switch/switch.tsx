@@ -1,6 +1,5 @@
 import { type ButtonHTMLAttributes, QRL, component$, useSignal, useTask$ } from "@builder.io/qwik"
 import { cn } from "~/utils"
-import { HiddenFormControl } from "./hidden-form-control"
 
 interface SwitchThumbProps {
   checked?: boolean
@@ -65,7 +64,7 @@ export const Switch = component$<SwitchProps>(({
       </button>
 
       {formControl && (
-        <HiddenFormControl checked={checked.value} />
+        <input type="hidden" bind:checked={checked} />
       )}
     </>
   )
