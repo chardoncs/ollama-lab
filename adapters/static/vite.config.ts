@@ -5,7 +5,7 @@ import baseConfig from "../../vite.config";
 export default extendConfig(baseConfig as any, () => {
   return {
     build: {
-      ssr: true,
+      ssr: false,
       rollupOptions: {
         input: ["@qwik-city-plan"],
       },
