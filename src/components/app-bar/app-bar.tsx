@@ -1,24 +1,20 @@
 import { component$ } from '@builder.io/qwik'
 import { Section } from '~/models/section'
-import { BotMessageSquareIcon, PackageIcon, SettingsIcon } from "lucide-react"
-import { qwikify$ } from "@builder.io/qwik-react"
 import { TabLink } from './tab-link'
 import { useLocation } from '@builder.io/qwik-city'
+import { BotMessageSquareIcon, PackageIcon, SettingsIcon } from '~/integrations/react/lucide-icons'
 
-const QBotMessageSquareIcon = qwikify$(BotMessageSquareIcon)
-const QPackageIcon = qwikify$(PackageIcon)
-const QSettingsIcon = qwikify$(SettingsIcon)
 
 const tabs: Section[] = [
   {
     name: "Sessions",
-    icon: <QBotMessageSquareIcon />,
+    icon: <BotMessageSquareIcon />,
     href: "/",
     activePattern: /^\/?$/,
   },
   {
     name: "Models",
-    icon: <QPackageIcon />,
+    icon: <PackageIcon />,
     href: "/models",
     activePattern: /^\/models(\/*.)?/,
   },
@@ -27,7 +23,7 @@ const tabs: Section[] = [
 const footerTabs: Section[] = [
   {
     name: "Settings",
-    icon: <QSettingsIcon />,
+    icon: <SettingsIcon />,
     href: "/settings",
     activePattern: /^\/settings(\/*.)?/,
   },
