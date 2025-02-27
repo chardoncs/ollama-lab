@@ -1,4 +1,4 @@
-import { $, component$ } from '@builder.io/qwik'
+import { component$ } from '@builder.io/qwik'
 import { Section } from '~/models/section'
 import { BotMessageSquareIcon, PackageIcon, SettingsIcon } from "lucide-react"
 import { qwikify$ } from "@builder.io/qwik-react"
