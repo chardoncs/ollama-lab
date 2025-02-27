@@ -3,7 +3,7 @@ version = "0.3.0"
 identifier = "org.ollamalab.tauri"
 
 [build]
-before-build-command = "bun run build"
+before-build-command = "bun run build.server"
 before-dev-command = "bun run dev"
 frontend-dist = "../build"
 dev-url = "http://localhost:1420"
