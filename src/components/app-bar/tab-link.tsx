@@ -1,5 +1,4 @@
-import { component$, type QRL, Slot } from "@qwik.dev/core"
-import { Link } from "@qwik.dev/router"
+import { component$, QRL, Slot } from "@builder.io/qwik"
 import { cn } from "~/utils"
 
 export interface TabLinkProps {
@@ -22,7 +21,7 @@ export const TabLink = component$<TabLinkProps>(({ active, href, name, onClick$ 
         )} />
       </div>
 
-      <Link
+      <a
         href={href ?? ""}
         aria-label={name}
         title={name}
@@ -31,7 +30,7 @@ export const TabLink = component$<TabLinkProps>(({ active, href, name, onClick$ 
         onClick$={onClick$}
       >
         <Slot />
-      </Link>
+      </a>
     </div>
   )
 })

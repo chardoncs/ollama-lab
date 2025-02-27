@@ -1,11 +1,11 @@
 {
   "compilerOptions": {
     "allowJs": true,
-    "target": "es2022",
-    "module": "esnext",
-    "lib": ["esnext", "DOM", "WebWorker", "DOM.Iterable"],
+    "target": "ES2017",
+    "module": "ES2022",
+    "lib": ["es2022", "DOM", "WebWorker", "DOM.Iterable"],
     "jsx": "react-jsx",
-    "jsxImportSource": "@qwik.dev/core",
+    "jsxImportSource": "@builder.io/qwik",
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,

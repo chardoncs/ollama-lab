@@ -1,20 +1,25 @@
-import { component$ } from '@qwik.dev/core'
-import type { Section } from '~/models/section'
+import { component$ } from '@builder.io/qwik'
+import { Section } from '~/models/section'
+import { BotMessageSquareIcon, PackageIcon, SettingsIcon } from "lucide-react"
+import { qwikify$ } from "@builder.io/qwik-react"
 import { TabLink } from './tab-link'
-import { useLocation } from '@qwik.dev/router'
-import { BotMessageSquareIcon, PackageIcon, SettingsIcon } from '~/integrations/react/lucide-icons'
+import { basePathname } from '@qwik-city-plan'
+
+const QBotMessageSquareIcon = qwikify$(BotMessageSquareIcon)
+const QPackageIcon = qwikify$(PackageIcon)
+const QSettingsIcon = qwikify$(SettingsIcon)
 
 const tabs: Section[] = [
   {
     name: "Sessions",
-    icon: <BotMessageSquareIcon />,
+    icon: <QBotMessageSquareIcon />,
     href: "/",
     activePattern: /^\/?$/,
   },
   {
     name: "Models",
-    icon: <PackageIcon />,
-    href: "/models/",
+    icon: <QPackageIcon />,
+    href: "/models",
     activePattern: /^\/models(\/*.)?/,
   },
 ]
@@ -22,15 +27,13 @@ const tabs: Section[] = [
 const footerTabs: Section[] = [
   {
     name: "Settings",
-    icon: <SettingsIcon />,
-    href: "/settings/",
+    icon: <QSettingsIcon />,
+    href: "/settings",
     activePattern: /^\/settings(\/*.)?/,
   },
 ]
 
 export const AppBar = component$(() => {
-  const { url: { pathname } } = useLocation()
-
   return (
     <nav class="flex flex-col border-r border-border px-1 py-1">
       <div class="grow flex flex-col">
@@ -40,7 +43,7 @@ export const AppBar = component$(() => {
             href={href}
             name={name}
             onClick$={onClick ? () => onClick() : undefined}
-            active={activePattern?.test(pathname)}
+            active={activePattern?.test(basePathname)}
           >
             {icon}
           </TabLink>
@@ -54,7 +57,7 @@ export const AppBar = component$(() => {
             href={href}
             name={name}
             onClick$={onClick ? () => onClick() : undefined}
-            active={activePattern?.test(pathname)}
+            active={activePattern?.test(basePathname)}
           >
             {icon}
           </TabLink>

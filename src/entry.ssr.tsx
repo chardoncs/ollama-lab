@@ -13,7 +13,7 @@
 import {
   renderToStream,
   type RenderToStreamOptions,
-} from "@qwik.dev/core/server"
+} from "@builder.io/qwik/server"
 import { manifest } from "@qwik-client-manifest"
 import Root from "./root"
 

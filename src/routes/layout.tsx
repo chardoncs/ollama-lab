@@ -1,10 +1,9 @@
-import { component$, Slot } from "@qwik.dev/core"
-import type { RequestHandler } from "@qwik.dev/router"
+import { component$, Slot } from "@builder.io/qwik"
+import type { RequestHandler } from "@builder.io/qwik-city"
 import { Toaster } from "qwik-sonner"
 import { AppBar } from "~/components/app-bar/app-bar"
 import { ModeWatcher } from "~/components/mode-watcher/mode-watcher"
 import { useModeContextProvider } from "~/contexts/mode-context"
-import "@fontsource-variable/inter/wght.css"
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
