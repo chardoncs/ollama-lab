@@ -1,4 +1,4 @@
-import { createContextId, Signal, useContext, useContextProvider, useSignal } from "@builder.io/qwik"
+import { createContextId, type Signal, useContext, useContextProvider, useSignal } from "@qwik.dev/core"
 
 export type Mode = "dark" | "light" | "system"
 

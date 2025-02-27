@@ -1,4 +1,4 @@
-import { component$, useVisibleTask$ } from "@builder.io/qwik"
+import { component$, useVisibleTask$ } from "@qwik.dev/core"
 import { useModeContext } from "~/contexts/mode-context"
 
 export const ModeWatcher = component$(() => {

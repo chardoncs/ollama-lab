@@ -24,9 +24,9 @@
     "qwik": "qwik"
   },
   "devDependencies": {
-    "@builder.io/qwik": "^1.12.1",
-    "@builder.io/qwik-city": "^1.12.1",
-    "@builder.io/qwik-react": "^0.5.5",
+    "@qwik.dev/core": "^2.0.0-alpha.7",
+    "@qwik.dev/router": "^2.0.0-alpha.7",
+    "@qwik.dev/react": "^2.0.0-alpha.7",
     "@fontsource-variable/inter": "^5.1.1",
     "@tailwindcss/vite": "^4.0.9",
     "@tauri-apps/api": "^2.3.0",
