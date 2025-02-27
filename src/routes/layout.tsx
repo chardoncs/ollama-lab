@@ -1,7 +1,8 @@
-import { component$, Slot } from "@builder.io/qwik"
+import { component$, isBrowser, Slot, useTask$ } from "@builder.io/qwik"
 import type { RequestHandler } from "@builder.io/qwik-city"
 import { Toaster } from "qwik-sonner"
 import { AppBar } from "~/components/app-bar/app-bar"
+import { useModeContext, useModeContextProvider } from "~/contexts/mode-context"
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
@@ -15,6 +16,27 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
 }
 
 export default component$(() => {
+  useModeContextProvider()
+
+  const mode = useModeContext()
+
+  useTask$(({ track }) => {
+    if (isBrowser) {
+      const modeValue = track(mode)
+      const preferredMode = modeValue === "system" ? (
+        window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
+      ) : modeValue
+
+      const root = document.body
+
+      if (preferredMode === "dark") {
+        root.classList.add("dark")
+      } else {
+        root.classList.remove("dark")
+      }
+    }
+  })
+
   return (
     <div class="contents">
       <Toaster
