@@ -3,7 +3,7 @@ import { Section } from '~/models/section'
 import { BotMessageSquareIcon, PackageIcon, SettingsIcon } from "lucide-react"
 import { qwikify$ } from "@builder.io/qwik-react"
 import { TabLink } from './tab-link'
-import { basePathname } from '@qwik-city-plan'
+import { useLocation } from '@builder.io/qwik-city'
 
 const QBotMessageSquareIcon = qwikify$(BotMessageSquareIcon)
 const QPackageIcon = qwikify$(PackageIcon)
@@ -34,6 +34,8 @@ const footerTabs: Section[] = [
 ]
 
 export const AppBar = component$(() => {
+  const loc = useLocation()
+
   return (
     <nav class="flex flex-col border-r border-border px-1 py-1">
       <div class="grow flex flex-col">
@@ -43,7 +45,7 @@ export const AppBar = component$(() => {
             href={href}
             name={name}
             onClick$={onClick ? () => onClick() : undefined}
-            active={activePattern?.test(basePathname)}
+            active={activePattern?.test(loc.url.pathname)}
           >
             {icon}
           </TabLink>
@@ -57,7 +59,7 @@ export const AppBar = component$(() => {
             href={href}
             name={name}
             onClick$={onClick ? () => onClick() : undefined}
-            active={activePattern?.test(basePathname)}
+            active={activePattern?.test(loc.url.pathname)}
           >
             {icon}
           </TabLink>
